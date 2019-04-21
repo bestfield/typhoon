@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.field.typhoonquery.mapper.TyphoonForecastMapper">
+    <resultMap id="BaseResultMap" type="com.field.typhoonquery.entity.TyphoonForecast">
+        <result column="typhoon_id" jdbcType="INTEGER" property="typhoon_id"/>
+        <result column="obs_time" jdbcType="DATE" property="obs_time"/>
+        <result column="pre_time" jdbcType="DATE" property="pre_time"/> 
+        <result column="forecast_org" jdbcType="VARCHAR" property="forecast_org"/>
+        <result column="lon" jdbcType="FLOAT" property="lon"/>
+        <result column="lat" jdbcType="FLOAT" property="lat"/>
+        <result column="central_pressure" jdbcType="FLOAT" property="central_pressure"/>
+        <result column="central_lon" jdbcType="FLOAT" property="central_lon"/>
+        <result column="central_lat" jdbcType="FLOAT" property="central_lat"/>
+        <result column="radius_7" jdbcType="VARCHAR" property="radius_7"/>
+        <result column="radius_10" jdbcType="VARCHAR" property="radius_10"/>
+        <result column="radius_12" jdbcType="VARCHAR" property="radius_12"/>
+        <result column="wind_speed" jdbcType="FLOAT" property="wind_speed"/>
+        <result column="wind_direction" jdbcType="VARCHAR" property="wind_direction"/>
+        <result column="wind_speed_max" jdbcType="FLOAT" property="wind_speed_max"/>
+    </resultMap>
+    <select id="listTpFcByIdAndTime" resultMap="BaseResultMap" >
+        select
+        *
+        from t_typhoon_forecast
+        where typhoon_id = #{typhoon_id} and obs_time = #{obs_time}
+        order by pre_time asc
+    </select>
+    <insert id="insertMap" parameterType="java.util.List">
+        insert into t_typhoon_forecast
+        (typhoon_id, obs_time, pre_time, forecast_org)
+        values
+        <foreach collection="list" separator="," item="map" index="index">
+            (#{map.typhoon_id},
+            #{map.obs_time},
+            #{map.pre_time},
+            #{map.forecast_org})
+        </foreach>
+    </insert>
+    <insert id="insertList" parameterType="java.util.List">
+        insert into t_typhoon_forecast
+        (typhoon_id, obs_time, pre_time, forecast_org, lon, lat, central_pressure, wind_speed_max)
+        values
+        <foreach collection="list" separator="," item="item" index="index">
+            (#{item.typhoon_id},
+            #{item.obs_time},
+            #{item.pre_time},
+            #{item.forecast_org},
+            #{item.lon},
+            #{item.lat},
+            #{item.central_pressure},
+            #{item.wind_speed_max})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdateForecast" parameterType="com.field.typhoonquery.entity.TyphoonForecast">
+        replace into t_typhoon_forecast
+        (typhoon_id, obs_time, pre_time, forecast_org, lon, lat, central_pressure, wind_speed_max, nameless_id, wind_speed)
+        values ( #{forecast.typhoon_id} , #{forecast.obs_time}, #{forecast.pre_time}, #{forecast.forecast_org}, #{forecast.lon}, #{forecast.lat}, #{forecast.central_pressure}, #{forecast.wind_speed_max}, #{forecast.nameless_id}, #{forecast.wind_speed})
+    </insert>
+</mapper>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.field.typhoonquery.mapper.TyphoonLiveMapper">
+    <resultMap id="BaseResultMap" type="com.field.typhoonquery.entity.TyphoonLive">
+        <result column="typhoon_id" jdbcType="INTEGER" property="typhoon_id"/>
+        <result column="typhoon_name" jdbcType="VARCHAR" property="typhoon_name"/>
+        <result column="obs_time" jdbcType="DATE" property="obs_time"/>
+        <result column="lon" jdbcType="FLOAT" property="lon"/>
+        <result column="lat" jdbcType="FLOAT" property="lat"/>
+        <result column="central_pressure" jdbcType="FLOAT" property="central_pressure"/>
+        <result column="wind_power" jdbcType="FLOAT" property="wind_power"/>
+        <result column="move_direction" jdbcType="VARCHAR" property="move_direction"/>
+        <result column="move_speed" jdbcType="FLOAT" property="move_speed"/>
+        <result column="grade" jdbcType="VARCHAR" property="grade"/>
+        <result column="radius_7" jdbcType="VARCHAR" property="radius_7"/>
+        <result column="radius_10" jdbcType="VARCHAR" property="radius_10"/>
+        <result column="radius_12" jdbcType="VARCHAR" property="radius_12"/>
+    </resultMap>
+    <select id="listTpLiveByYears" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select *
+        from t_typhoon_live
+        where YEAR(obs_time) between #{startYear,jdbcType=INTEGER} and #{endYear,jdbcType=INTEGER}
+        order by typhoon_id desc,obs_time asc
+    </select>
+    <select id="listTpLiveById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select *
+        from t_typhoon_live
+        where typhoon_id = #{typhoonId,jdbcType=INTEGER}
+        order by obs_time asc
+    </select>
+    <insert id="insertList" parameterType="java.util.List">
+        insert into t_typhoon_live
+        (typhoon_id, typhoon_name, obs_time, lon, lat, central_pressure, wind_power, move_direction, move_speed, grade,
+        radius_7, radius_10, radius_12)
+        values
+        <foreach collection="list" separator="," item="item" index="index">
+            (#{item.typhoon_id},
+            #{item.typhoon_name},
+            #{item.obs_time},
+            #{item.lon},
+            #{item.lat},
+            #{item.central_pressure},
+            #{item.wind_power},
+            #{item.move_direction},
+            #{item.move_speed},
+            #{item.grade},
+            #{item.radius_7},
+            #{item.radius_10},
+            #{item.radius_12})
+        </foreach>
+    </insert>
+    <insert id="insertOrUpdateLive" parameterType="com.field.typhoonquery.entity.TyphoonLive">
+        insert into t_typhoon_live (typhoon_id, typhoon_name, obs_time, lon, lat, central_pressure, wind_power,
+                                    move_direction, move_speed,grade, radius_7, radius_10, radius_12, nameless_id)
+        values (#{live.typhoon_id}, #{live.typhoon_name}, #{live.obs_time}, #{live.lon}, #{live.lat}, #{live.central_pressure},
+                #{live.wind_power}, #{live.move_direction}, #{live.move_speed}, #{live.grade}, #{live.radius_7}, #{live.radius_10},
+                #{live.radius_12}, #{live.nameless_id} )
+    </insert>
+</mapper>

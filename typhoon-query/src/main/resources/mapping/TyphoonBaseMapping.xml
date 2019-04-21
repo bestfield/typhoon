@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.field.typhoonquery.mapper.TyphoonBaseMapper">
+    <insert id="insertOrUpdateBase" parameterType="com.field.typhoonquery.entity.TyphoonBase">
+        replace into t_typhoon_base (typhoon_id, typhoon_name)
+        values (#{base.typhoon_id}, #{base.typhoon_name})
+    </insert>
+</mapper>
