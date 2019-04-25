@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: typhoon-eureka-client-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8070
+
+zuul:
+  routes:
+    #匹配/github/ 直接重定向到https://github.com
+    github:
+      path: /github/**
+      url: https://github.com
+    #匹配/api-a 开头匹配到typhoon-eureka-client
+    api-a:
+      path: /api-a/**
+      serviceId: typhoon-eureka-client
+

@@ -35,10 +35,12 @@ public class DataScheduler {
     @Autowired
     TyphoonBaseService typhoonBaseServiceImpl;
 
+    /** TODO: readFile中文件路径要改*/
+
 /** 调度器 【奇数】分钟执行一次*/
     @Scheduled(cron = "0 1/2 * * * ? ")
     public void run() throws Exception {
-        /** TODO: readFile中文件路径要改*/
+
         this.readFile();
     }
 

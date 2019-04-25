@@ -40,6 +40,7 @@ public class TyphoonController {
     @Autowired
     TyphoonForecastService typhoonForecastServiceImpl;
 
+    //TODO listorg 改造 feign?
     /** t_typhoon_org*/
     @RequestMapping(value = "/listorgs")
     @ResponseBody

@@ -35,7 +35,7 @@ public class TyphoonLiveScheduler {
         conn.setConnectTimeout(3000);
         InputStream inputStream = conn.getInputStream();
         byte[] getData = readInputStream(inputStream);
-        String strPath = "E:\\workspace\\typhoon-download\\download\\babj";
+        String strPath = "E:\\workspace\\typhoon-cloud\\typhoon-download\\download\\babj";
         File saveDir = new File(strPath);
         if (!saveDir.exists()) {
             saveDir.mkdir();
