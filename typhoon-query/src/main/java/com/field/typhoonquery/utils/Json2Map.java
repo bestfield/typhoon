@@ -1,4 +1,4 @@
-package com.supermap.utils;
+package com.field.typhoonquery.utils;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

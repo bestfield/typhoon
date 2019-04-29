@@ -51,7 +51,7 @@
         </foreach>
     </insert>
     <insert id="insertOrUpdateLive" parameterType="com.field.typhoondata.entity.TyphoonLive">
-        insert into t_typhoon_live (typhoon_id, typhoon_name, obs_time, lon, lat, central_pressure, wind_power,
+        replace into t_typhoon_live (typhoon_id, typhoon_name, obs_time, lon, lat, central_pressure, wind_power,
                                     move_direction, move_speed,grade, radius_7, radius_10, radius_12, nameless_id)
         values (#{live.typhoon_id}, #{live.typhoon_name}, #{live.obs_time}, #{live.lon}, #{live.lat}, #{live.central_pressure},
                 #{live.wind_power}, #{live.move_direction}, #{live.move_speed}, #{live.grade}, #{live.radius_7}, #{live.radius_10},

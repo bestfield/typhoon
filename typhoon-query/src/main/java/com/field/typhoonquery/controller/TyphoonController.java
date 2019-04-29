@@ -10,15 +10,12 @@ import com.field.typhoonquery.service.TyphoonOrgService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
+import static com.field.typhoonquery.utils.Json2Map.json2Map;
 
 /**
  * Created by Tian.Ye in 15:36 2019/3/12
@@ -42,6 +39,7 @@ public class TyphoonController {
 
     //TODO listorg 改造 feign?
     /** t_typhoon_org*/
+    /** zuul 访问地址：http://localhost:8070/query/typhoon/listorgs  */
     @RequestMapping(value = "/listorgs")
     @ResponseBody
     public List<TyphoonOrg> listOrgs() {
@@ -55,7 +53,7 @@ public class TyphoonController {
     @ResponseBody
     public List<Object> listLiveByYears(HttpServletRequest request, Model model){
         /**
-         * @Description: 测试地址: http://localhost:8083/typhoon/listlive?startYear=2018&endYear=2019
+         * @Description: 测试地址: http://localhost:8083/typhoon/listlive?startYear=2018&endYear=2019   zuul:http://localhost:8070/query/typhoon/listlive?startYear=2018&endYear=2019
          * @Date: Created in 上午 10:34 2019/2/25 0025
          * @Param: [request, model]
          * @Return: java.util.List<java.lang.Object>
@@ -64,7 +62,7 @@ public class TyphoonController {
         String endYear = request.getParameter("endYear");
         List<TyphoonLive> list = new ArrayList<>();
         list = typhoonLiveServiceImpl.listTyphoonByYears(Integer.parseInt(startYear), Integer.parseInt(endYear));
-        log.info("***Query Result is : "+list);
+        log.info("***Query Result is : "+list.toString());
         List<Integer> index = new ArrayList<>();
         List<Object> json = new ArrayList<>();
         int typhoonCount = typhoonLiveServiceImpl.calcTyphoonCount(list);
@@ -138,6 +136,183 @@ public class TyphoonController {
         return outerMap;
     }
 
+    /** typhoon_live 线查询 POST方式*/
+    @RequestMapping(value = "/querybyline")
+    @ResponseBody
+    public List<Object> queryByLine(@RequestBody String s) {
+        /**
+         * @Description: 步骤(1)解析post body、调用queryTyphoonByLine1()返回 值为typhoonId的集合idList，
+         *               步骤(2)再根据idList调用listTyphoonById()获得返回 值为TyphoonLocation的集合list,
+         *               步骤(3)最后拼接list,返回json
+         * @Date: Created in 上午 10:26 2018/12/20 0020
+         * @param s
+         */
+        /** 测试postman   Cyclone: 201829 USAGI  &   201827 桃芝Toraji  &  201804 EWINIGAR
+         *                Header:      Content-Type=application/json
+         *                Body(raw):  {"startYear":2018,"endYear":2019,"points":[{"latitude":10,"longitude":108},{"latitude":10.5,"longitude":109},{"latitude":11,"longitude":111}]}
+         *                Url:        localhost:8083/typhoon/querybyline
+         * */
+        /** 步骤(1)*/
+        log.info("前端传入的json字符串为：" + s);
+        int startYear, endYear;
+        List<Float> lonList = new ArrayList<>();
+        List<Float> latList = new ArrayList<>();
+        List<String> stringList = new ArrayList<>();
+        Map<String, Object> map = json2Map(s);
+        startYear = Integer.parseInt(map.get("startYear").toString());
+        endYear = Integer.parseInt(map.get("endYear").toString());
+        String points = map.get("points").toString();
+        log.info("Json中:startYear = " + startYear + " ,endYear = " + endYear + " ,points = " + points);
+        StringTokenizer tokenizer = new StringTokenizer(points, ",[]{} ");
+        while (tokenizer.hasMoreTokens()) {
+            stringList.add(tokenizer.nextToken());
+        }
+        log.info("stringList:" + stringList);
+        /** 添加stringList的奇数值到latList中 */
+        for (int i = 0; i < stringList.size(); i += 2) {
+            StringTokenizer stringTokenizer = new StringTokenizer(stringList.get(i), "latitude=");
+            while (stringTokenizer.hasMoreTokens()) {
+                latList.add(Float.parseFloat(stringTokenizer.nextToken()));
+            }
+        }
+        log.info("纵坐标集合latList:" + latList);
+        /** 添加stringList的偶数值到latList中 */
+        for (int i = 1; i < stringList.size(); i += 2) {
+            StringTokenizer stringTokenizer = new StringTokenizer(stringList.get(i), "longitude=");
+            while (stringTokenizer.hasMoreTokens()) {
+                lonList.add(Float.parseFloat(stringTokenizer.nextToken()));
+            }
+        }
+        log.info("横坐标集合lonList:" + lonList);
+        List<Integer> idList = new ArrayList<>();
+        if (latList.size() <= 1 || lonList.size() <= 1 || (latList.size() != lonList.size())) return null;
+        if (latList.size() == 2) {
+            idList = typhoonLiveServiceImpl.queryTyphoonByLine(startYear, endYear, lonList.get(0), latList.get(0), lonList.get(1), latList.get(1));
+        }
+        if (latList.size() > 2) {
+            idList = typhoonLiveServiceImpl.queryTyphoonByLine(startYear, endYear, lonList, latList);
+        }
+        log.info("***QueryByLine typhoonId(s) is: " + idList);
+        /** 步骤(2)*/
+        List<TyphoonLive> list = new ArrayList<>();
+        for (int i = 0; i < idList.size(); i++) {
+            list.addAll(typhoonLiveServiceImpl.listTyphoonById(idList.get(i)));
+        }
+        log.info("***list is :" + list);
+        /** 步骤(3)*/
+        List<Integer> index = new ArrayList<>();
+        List<Object> json = new ArrayList<>();
+        int typhoonCount = typhoonLiveServiceImpl.calcTyphoonCount(list);
+        /** 台风数==0 */
+        if (typhoonCount == 0) {
+            json.add("***The database query result is NULL!");
+            return json;
+        }
+        /** 台风数==1 && 数据行数==1 */
+        if (typhoonCount == 1 && list.size() == 1) {
+            json.add(list);
+            return json;
+        }
+        /** 台风数==1 && 数据行数>1 */
+        if (typhoonCount == 1) {
+            json.add(listToMapForLive(list));
+            return json;
+        }
+        /** 台风数>1 */
+        index = typhoonLiveServiceImpl.cutJson(list, typhoonCount);
+        int flag1 = 0;
+        for (int i = 0; i < index.size(); i++) {
+            json.add(i, listToMapForLive(list.subList(flag1, index.get(i) + 1)));
+            flag1 = index.get(i) + 1;
+        }
+        return json;
+    }
+
+    /** typhoon_live 面查询 POST方式*/
+    @RequestMapping(value = "/querybypolygon", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Object> queryByPolygon(@RequestBody String s){
+        /**
+         * @Description: 步骤(1)解析传入的Json 将其分割并将对应的latitude/longitude值存入latList/lonList集合,
+         *                          再调用queryTyphoonByPolygon()返回 值为typhoonId的集合idList
+         *                    步骤(2)再根据idList调用listTyphoonById()获得返回 值为TyphoonLocation的集合list,
+         *                    步骤(3)最后拼接list,返回json
+         * @Date: Created in 10:19 2018/12/17
+         * @param s
+         */
+
+        /** 步骤(1)
+         *  测试postman   Header:      Content-Type=application/json
+         *                Body(raw):  {"startYear":2018,"endYear":2019,"points":[{"latitude":10,"longitude":108},{"latitude":10,"longitude":110},{"latitude":12,"longitude":110},{"latitude":12,"longitude":108}]}
+         *                Url:        localhost:8083/typhoon/querybypolygon
+         * */
+        log.info("前端传入的json字符串为："+s);
+        List<Float> lonList = new ArrayList<>();
+        List<Float> latList = new ArrayList<>();
+        List<String> stringList = new ArrayList<>();
+
+        Map<String, Object> map = json2Map(s);
+        int startYear = Integer.parseInt(map.get("startYear").toString());
+        int endYear = Integer.parseInt(map.get("endYear").toString());
+        String points = map.get("points").toString();
+        StringTokenizer tokenizer = new StringTokenizer(points,",[]{} ");
+        while(tokenizer.hasMoreTokens()){
+            stringList.add(tokenizer.nextToken());
+        }
+        log.info("stringList:"+stringList);
+        /** 添加stringList的奇数值到latList中 */
+        for (int i = 0; i < stringList.size() ; i+=2) {
+            StringTokenizer stringTokenizer = new StringTokenizer(stringList.get(i), "latitude=");
+            while (stringTokenizer.hasMoreTokens()) {
+                latList.add(Float.parseFloat(stringTokenizer.nextToken()));
+            }
+        }
+        log.info("纵坐标集合latList:"+latList);
+        /** 添加stringList的偶数值到latList中 */
+        for (int i = 1; i < stringList.size() ; i+=2) {
+            StringTokenizer stringTokenizer = new StringTokenizer(stringList.get(i), "longitude=");
+            while (stringTokenizer.hasMoreTokens()) {
+                lonList.add(Float.parseFloat(stringTokenizer.nextToken()));
+            }
+        }
+        log.info("横坐标集合lonList:" + lonList);
+
+        List<Integer> idList = typhoonLiveServiceImpl.queryTyphoonByPolygon(startYear,endYear,lonList,latList);
+        log.info("***QueryByPolygon typhoonId(s) is: "+idList);
+        /** 步骤(2)*/
+        List<TyphoonLive> list = new ArrayList<>();
+        for(int i = 0; i<idList.size(); i++){
+            list.addAll(typhoonLiveServiceImpl.listTyphoonById(idList.get(i)));
+        }
+        log.info("***list is :" + list);
+        /** 步骤(3)*/
+        List<Integer> index = new ArrayList<>();
+        List<Object> json = new ArrayList<>();
+        int typhoonCount = typhoonLiveServiceImpl.calcTyphoonCount(list);
+        /** 台风数==0 */
+        if(typhoonCount == 0) {
+            json.add("***The database query result is NULL!");
+            return json;
+        }
+        /** 台风数==1 && 数据行数==1 */
+        if(typhoonCount == 1 && list.size() == 1 ){
+            json.add(list);
+            return json;
+        }
+        /** 台风数==1 && 数据行数>1 */
+        if(typhoonCount == 1 ){
+            json.add(listToMapForLive(list));
+            return json;
+        }
+        /** 台风数>1 */
+        index = typhoonLiveServiceImpl.cutJson(list, typhoonCount);
+        int flag1 = 0;
+        for(int i = 0; i<index.size(); i++){
+            json.add(i, listToMapForLive(list.subList(flag1,index.get(i)+1)));
+            flag1 = index.get(i)+1;
+        }
+        return json;
+    }
 
     /** typhoon_forecast 获取预报路径*/
     @RequestMapping(value = "/listfc")

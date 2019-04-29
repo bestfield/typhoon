@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *  熔断处理test
  */
 @Component
-public class FeignClientHystrix implements HelloFeignClient {
+public class HelloFeignClientHystrix implements HelloFeignClient {
 
     @Override
     public String hello(@RequestParam(value = "name") String name) {

@@ -16,6 +16,10 @@ repositories {
     maven{url"http://maven.aliyun.com/nexus/content/groups/public/"}
 }
 
+ext {
+    set('springCloudVersion', 'Greenwich.SR1')
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -28,5 +32,13 @@ dependencies {
     // https://mvnrepository.com/artifact/org.jsoup/jsoup
     compile group: 'org.jsoup', name: 'jsoup', version: '1.7.2'
 
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    // https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-client
+    compile group: 'de.codecentric', name: 'spring-boot-admin-client', version: '2.1.4'
+}
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }

@@ -30,6 +30,8 @@ dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
     /** feign */
     compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    // https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server
+    compile group: 'de.codecentric', name: 'spring-boot-admin-client', version: '2.1.4'
 }
 
 dependencyManagement {

@@ -1,7 +1,7 @@
 package com.field.typhoonquery.controller;
 
 import com.field.typhoonquery.service.DataFeignClient;
-import com.field.typhoonquery.service.FeignClient;
+import com.field.typhoonquery.service.HelloFeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 public class ConsumerController {
 
     @Resource
-    private FeignClient feignClient;
+    private HelloFeignClient helloFeignClient;
 
     @Resource
     private DataFeignClient dataFeignClient;
@@ -24,7 +24,7 @@ public class ConsumerController {
     /** feign   http://localhost:8083/hello/field */
     @GetMapping("/hello/{name}")
     public String index(@PathVariable("name") String name) {
-        return feignClient.hello(name);
+        return helloFeignClient.hello(name);
     }
 
     /** 将.txt文件中的报文解析并同步到数据库
@@ -33,6 +33,11 @@ public class ConsumerController {
     @GetMapping("/sync")
     public String syncDatabase() {
         return dataFeignClient.sync();
+    }
+
+    @GetMapping("/syncall")
+    public String syncDatabase1() {
+        return dataFeignClient.syncAll();
     }
 
 }

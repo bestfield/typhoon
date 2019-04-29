@@ -1,0 +1,470 @@
+16:09:49.095 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$91104bc1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:09:50.806 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:09:51.642 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:09:51.795 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:09:51.953 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$91104bc1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:09:52.255 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:09:52.268 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:09:52.276 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:09:52.276 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:09:52.282 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:09:52.283 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:09:52.283 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:09:52.283 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:09:53.327 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+16:09:53.509 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:09:53.510 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2679 ms
+16:09:53.641 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:09:53.641 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:09:53.651 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@1e7ab390
+16:09:55.290 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:09:55.623 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+16:09:55.667 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:09:55.667 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:09:55.847 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:09:56.132 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+16:09:56.200 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:09:57.752 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:09:57.808 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 20 endpoint(s) beneath base path '/actuator'
+16:09:57.898 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+16:09:57.934 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+16:09:58.079 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+16:09:58.079 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+16:09:58.186 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+16:09:58.186 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+16:09:58.390 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+16:09:58.728 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:09:58.728 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:09:58.729 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:09:58.729 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:09:58.729 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:09:58.729 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+16:09:58.729 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:09:59.496 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:09:59.499 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+16:09:59.501 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+16:09:59.506 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1556525399505 with initial instances count: 0
+16:09:59.510 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TYPHOON-DOWNLOAD with eureka with status UP
+16:09:59.511 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1556525399510, current=UP, previous=STARTING]
+16:09:59.514 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079: registering service...
+16:09:59.540 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8079"]
+16:09:59.578 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8079 (http) with context path ''
+16:09:59.579 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8079
+16:09:59.582 [main] INFO  c.field.typhoondownload.Application - Started Application in 14.348 seconds (JVM running for 15.729)
+16:09:59.631 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079 - registration status: 204
+16:09:59.886 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:09:59.894 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:09:59.906 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+16:10:00.100 [scheduling-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+java.io.FileNotFoundException: E:\workspace\typhoon-cloud\typhoon-download\download\babj\list_2018 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at com.field.typhoondownload.scheduler.TyphoonLiveScheduler.downOne(TyphoonLiveScheduler.java:65)
+	at com.field.typhoondownload.scheduler.TyphoonLiveScheduler.run(TyphoonLiveScheduler.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+16:10:00.650 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=typhoon-download, managementUrl=http://192.168.0.109:8079/actuator, healthUrl=http://192.168.0.109:8079/actuator/health, serviceUrl=http://192.168.0.109:8079/) at spring-boot-admin ([http://localhost:8888/instances]): I/O error on POST request for "http://localhost:8888/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+16:10:29.499 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:10:29.499 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:10:29.499 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:10:29.500 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:10:29.500 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:10:29.500 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+16:10:29.500 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:10:29.538 [DiscoveryClient-CacheRefreshExecutor-0] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:11:50.960 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5945505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:11:52.728 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:11:53.661 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:11:53.936 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:11:54.082 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$5945505] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:11:54.463 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:11:54.485 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:11:54.504 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:11:54.504 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:11:54.514 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:11:54.514 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:11:54.514 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:11:54.514 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:11:55.570 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+16:11:55.771 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:11:55.771 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3016 ms
+16:11:55.930 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:11:55.931 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:11:55.948 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@35bfa1bb
+16:11:57.779 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:11:58.052 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+16:11:58.342 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:11:58.343 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:11:58.584 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:11:58.970 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+16:11:59.060 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:12:00.610 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:12:00.695 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 20 endpoint(s) beneath base path '/actuator'
+16:12:00.874 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+16:12:00.944 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+16:12:01.204 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+16:12:01.204 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+16:12:01.447 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+16:12:01.448 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+16:12:01.706 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+16:12:02.067 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:12:02.067 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:12:02.068 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:12:02.068 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:12:02.068 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:12:02.068 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+16:12:02.068 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:12:02.451 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:12:02.455 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+16:12:02.459 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+16:12:02.464 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1556525522463 with initial instances count: 1
+16:12:02.468 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TYPHOON-DOWNLOAD with eureka with status UP
+16:12:02.468 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1556525522468, current=UP, previous=STARTING]
+16:12:02.471 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079: registering service...
+16:12:02.503 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8079"]
+16:12:02.526 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079 - registration status: 204
+16:12:02.547 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8079 (http) with context path ''
+16:12:02.549 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8079
+16:12:02.551 [main] INFO  c.field.typhoondownload.Application - Started Application in 14.528 seconds (JVM running for 17.272)
+16:12:02.902 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:12:02.903 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:12:02.917 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+16:12:04.013 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=typhoon-download, managementUrl=http://192.168.0.109:8079/actuator, healthUrl=http://192.168.0.109:8079/actuator/health, serviceUrl=http://192.168.0.109:8079/) at spring-boot-admin ([http://localhost:8888/instances]): I/O error on POST request for "http://localhost:8888/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+16:13:44.185 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$abf59e76] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:13:45.933 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:13:46.880 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:13:47.129 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:13:47.282 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$abf59e76] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:13:47.687 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:13:47.705 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:13:47.715 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:13:47.715 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:13:47.723 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:13:47.723 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:13:47.724 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:13:47.724 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:13:48.767 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+16:13:48.930 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:13:48.931 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2976 ms
+16:13:49.081 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:13:49.082 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:13:49.094 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@43471a7e
+16:13:50.886 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:13:51.178 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+16:13:51.248 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:13:51.248 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:13:51.483 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:13:51.872 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+16:13:51.980 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:13:53.521 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:13:53.598 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 20 endpoint(s) beneath base path '/actuator'
+16:13:53.743 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+16:13:53.800 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+16:13:53.989 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+16:13:53.989 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+16:13:54.146 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+16:13:54.146 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+16:13:54.420 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+16:13:54.776 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:13:54.777 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:13:54.777 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:13:54.777 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:13:54.777 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:13:54.777 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+16:13:54.777 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:13:55.189 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:13:55.193 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+16:13:55.197 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+16:13:55.204 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1556525635201 with initial instances count: 1
+16:13:55.207 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TYPHOON-DOWNLOAD with eureka with status UP
+16:13:55.207 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1556525635207, current=UP, previous=STARTING]
+16:13:55.211 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079: registering service...
+16:13:55.237 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8079"]
+16:13:55.261 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079 - registration status: 204
+16:13:55.281 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8079 (http) with context path ''
+16:13:55.282 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8079
+16:13:55.285 [main] INFO  c.field.typhoondownload.Application - Started Application in 14.652 seconds (JVM running for 16.724)
+16:13:55.413 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:13:55.413 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:13:55.437 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 23 ms
+16:13:56.810 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=typhoon-download, managementUrl=http://192.168.0.109:8079/actuator, healthUrl=http://192.168.0.109:8079/actuator/health, serviceUrl=http://192.168.0.109:8079/) at spring-boot-admin ([http://localhost:8888/instances]): I/O error on POST request for "http://localhost:8888/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+16:15:21.969 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$44ffb7b7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:15:23.656 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:15:24.376 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:15:24.539 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:15:24.651 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$44ffb7b7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:15:24.922 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:15:24.936 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:15:24.944 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:15:24.944 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:15:24.951 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:15:24.952 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:15:24.952 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:15:24.952 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:15:26.009 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+16:15:26.173 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:15:26.173 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2500 ms
+16:15:26.301 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:15:26.301 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:15:26.318 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@26cb5207
+16:15:28.096 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:15:28.319 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+16:15:28.369 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:15:28.369 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:15:28.553 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:15:28.851 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+16:15:28.926 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:15:30.474 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:15:30.533 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 20 endpoint(s) beneath base path '/actuator'
+16:15:30.629 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+16:15:30.672 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+16:15:30.843 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+16:15:30.843 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+16:15:30.960 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+16:15:30.960 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+16:15:31.171 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+16:15:31.527 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:15:31.528 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:15:31.528 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:15:31.528 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:15:31.528 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:15:31.528 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+16:15:31.528 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:15:31.923 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:15:31.926 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+16:15:31.928 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+16:15:31.933 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1556525731932 with initial instances count: 1
+16:15:31.935 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TYPHOON-DOWNLOAD with eureka with status UP
+16:15:31.935 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1556525731935, current=UP, previous=STARTING]
+16:15:31.937 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079: registering service...
+16:15:31.961 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8079"]
+16:15:31.981 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079 - registration status: 204
+16:15:31.998 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8079 (http) with context path ''
+16:15:31.999 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8079
+16:15:32.000 [main] INFO  c.field.typhoondownload.Application - Started Application in 13.195 seconds (JVM running for 14.715)
+16:15:32.475 [RMI TCP Connection(5)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:15:32.475 [RMI TCP Connection(5)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:15:32.484 [RMI TCP Connection(5)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+16:15:33.055 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=typhoon-download, managementUrl=http://192.168.0.109:8079/actuator, healthUrl=http://192.168.0.109:8079/actuator/health, serviceUrl=http://192.168.0.109:8079/) at spring-boot-admin ([http://localhost:8888/instances]): I/O error on POST request for "http://localhost:8888/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+16:17:22.127 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$13514c0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:17:23.808 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:17:24.513 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:17:24.692 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:17:24.796 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$13514c0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:17:25.061 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:17:25.075 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:17:25.084 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:17:25.084 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:17:25.091 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:17:25.091 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:17:25.091 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:17:25.091 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:17:26.138 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+16:17:26.280 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:17:26.280 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2457 ms
+16:17:26.434 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:17:26.434 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:17:26.448 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@7fdab70c
+16:17:28.091 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:17:28.419 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+16:17:28.465 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:17:28.466 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:17:28.639 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:17:28.924 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+16:17:28.997 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:17:30.544 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:17:30.604 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 20 endpoint(s) beneath base path '/actuator'
+16:17:30.711 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+16:17:30.758 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+16:17:30.919 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+16:17:30.920 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+16:17:31.068 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+16:17:31.068 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+16:17:31.265 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+16:17:31.624 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:17:31.624 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:17:31.625 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:17:31.625 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:17:31.625 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:17:31.625 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+16:17:31.625 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:17:31.938 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:17:31.942 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+16:17:31.945 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+16:17:31.948 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1556525851947 with initial instances count: 1
+16:17:31.951 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TYPHOON-DOWNLOAD with eureka with status UP
+16:17:31.952 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1556525851952, current=UP, previous=STARTING]
+16:17:31.957 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079: registering service...
+16:17:31.980 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8079"]
+16:17:31.995 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079 - registration status: 204
+16:17:32.011 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8079 (http) with context path ''
+16:17:32.012 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8079
+16:17:32.014 [main] INFO  c.field.typhoondownload.Application - Started Application in 12.934 seconds (JVM running for 14.286)
+16:17:32.518 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:17:32.518 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:17:32.531 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+16:17:33.446 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=typhoon-download, managementUrl=http://192.168.0.109:8079/actuator, healthUrl=http://192.168.0.109:8079/actuator/health, serviceUrl=http://192.168.0.109:8079/) at spring-boot-admin ([http://localhost:8888/instances]): I/O error on POST request for "http://localhost:8888/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+16:18:59.993 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a7e4833f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:19:01.867 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:19:02.695 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:19:02.876 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:19:03.020 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$a7e4833f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:19:03.421 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:19:03.443 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:19:03.454 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:19:03.455 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:19:03.465 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:19:03.465 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:19:03.465 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:19:03.466 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:19:20.596 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$2c6e6a85] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:19:22.322 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:19:23.021 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:19:23.185 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:19:23.290 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$2c6e6a85] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:19:23.605 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:19:23.619 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:19:23.627 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:19:23.628 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:19:23.635 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:19:23.635 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:19:23.636 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:19:23.636 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:19:24.684 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+16:19:24.894 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:19:24.895 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2557 ms
+16:19:25.017 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:19:25.018 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:19:25.029 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@15639440
+16:19:26.724 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:19:27.107 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+16:19:27.152 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:19:27.152 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:19:27.342 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:19:27.631 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+16:19:27.717 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:19:29.266 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:19:29.327 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 20 endpoint(s) beneath base path '/actuator'
+16:19:29.421 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+16:19:29.456 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+16:19:29.599 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+16:19:29.599 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+16:19:29.728 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+16:19:29.728 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+16:19:29.911 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+16:19:30.289 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:19:30.290 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:19:30.290 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:19:30.290 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:19:30.290 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:19:30.290 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+16:19:30.290 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:19:30.565 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:19:30.568 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+16:19:30.570 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+16:19:30.575 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1556525970573 with initial instances count: 1
+16:19:30.578 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TYPHOON-DOWNLOAD with eureka with status UP
+16:19:30.578 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1556525970578, current=UP, previous=STARTING]
+16:19:30.581 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079: registering service...
+16:19:30.609 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8079"]
+16:19:30.636 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079 - registration status: 204
+16:19:30.657 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8079 (http) with context path ''
+16:19:30.658 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8079
+16:19:30.661 [main] INFO  c.field.typhoondownload.Application - Started Application in 13.242 seconds (JVM running for 14.806)
+16:19:31.203 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:19:31.210 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:19:31.231 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 21 ms
+16:19:31.725 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=typhoon-download, managementUrl=http://192.168.0.109:8079/actuator, healthUrl=http://192.168.0.109:8079/actuator/health, serviceUrl=http://192.168.0.109:8079/) at spring-boot-admin ([http://localhost:8888/instances]): I/O error on POST request for "http://localhost:8888/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+16:20:00.122 [scheduling-1] ERROR o.s.s.s.TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task.
+net.sf.json.JSONException: Unquotted string 'typhoon_jsons_list_2018('
+	at net.sf.json.util.JSONTokener.nextValue(JSONTokener.java:432)
+	at net.sf.json.JSONArray._fromJSONTokener(JSONArray.java:1131)
+	at net.sf.json.JSONArray._fromString(JSONArray.java:1197)
+	at net.sf.json.JSONArray.fromObject(JSONArray.java:127)
+	at net.sf.json.JSONArray.fromObject(JSONArray.java:105)
+	at com.field.typhoondownload.scheduler.TyphoonLiveScheduler.downOne(TyphoonLiveScheduler.java:73)
+	at com.field.typhoondownload.scheduler.TyphoonLiveScheduler.run(TyphoonLiveScheduler.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+16:22:31.353 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f22fdd11] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:22:33.071 [main] INFO  c.field.typhoondownload.Application - No active profile set, falling back to default profiles: default
+16:22:33.788 [main] WARN  o.s.boot.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+16:22:33.943 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=485f080c-5a7f-34d6-9564-94dede6d7fc1
+16:22:34.055 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f22fdd11] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:22:34.318 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8079 (http)
+16:22:34.332 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8079"]
+16:22:34.341 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:22:34.341 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+16:22:34.347 [main] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.17] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+16:22:34.347 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+16:22:34.347 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:22:34.348 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:22:35.389 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+16:22:35.534 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:22:35.535 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2450 ms
+16:22:35.661 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:22:35.661 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:22:35.670 [main] INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@455c1d8c
+16:22:37.357 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:22:37.708 [main] INFO  o.s.b.a.e.w.ServletEndpointRegistrar - Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+16:22:37.756 [main] WARN  c.n.c.sources.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+16:22:37.757 [main] INFO  c.n.c.sources.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+16:22:37.936 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:22:38.228 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService
+16:22:38.301 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:22:39.927 [main] INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+16:22:39.988 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 20 endpoint(s) beneath base path '/actuator'
+16:22:40.092 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+16:22:40.133 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+16:22:40.270 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+16:22:40.271 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+16:22:40.384 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+16:22:40.384 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+16:22:40.572 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+16:22:40.944 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+16:22:40.945 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+16:22:40.945 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+16:22:40.945 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+16:22:40.945 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+16:22:40.945 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+16:22:40.945 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+16:22:41.227 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+16:22:41.230 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+16:22:41.233 [main] INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+16:22:41.238 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1556526161237 with initial instances count: 1
+16:22:41.242 [main] INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application TYPHOON-DOWNLOAD with eureka with status UP
+16:22:41.243 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1556526161243, current=UP, previous=STARTING]
+16:22:41.245 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079: registering service...
+16:22:41.271 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8079"]
+16:22:41.285 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TYPHOON-DOWNLOAD/localhost:typhoon-download:8079 - registration status: 204
+16:22:41.302 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8079 (http) with context path ''
+16:22:41.303 [main] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8079
+16:22:41.305 [main] INFO  c.field.typhoondownload.Application - Started Application in 13.033 seconds (JVM running for 14.371)
+16:22:41.660 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:22:41.660 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:22:41.671 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+16:22:42.703 [registrationTask1] WARN  d.c.b.a.c.r.ApplicationRegistrator - Failed to register application as Application(name=typhoon-download, managementUrl=http://192.168.0.109:8079/actuator, healthUrl=http://192.168.0.109:8079/actuator/health, serviceUrl=http://192.168.0.109:8079/) at spring-boot-admin ([http://localhost:8888/instances]): I/O error on POST request for "http://localhost:8888/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level

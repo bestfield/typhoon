@@ -9,6 +9,7 @@ import com.field.typhoondata.service.TyphoonLiveService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;
+import net.sf.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -35,22 +36,30 @@ public class DataScheduler {
     @Autowired
     TyphoonBaseService typhoonBaseServiceImpl;
 
+    static String path = "E:\\workspace\\typhoon-cloud\\typhoon-download\\download\\babj\\";
+
     /** TODO: readFile中文件路径要改*/
 
 /** 调度器 【奇数】分钟执行一次*/
-    @Scheduled(cron = "0 1/2 * * * ? ")
+//    @Scheduled(cron = "0 1/2 * * * ? ")
     public void run() throws Exception {
+        this.readFile("view_2468535");
+    }
 
-        this.readFile();
+    public void runAll() throws Exception {
+        ArrayList<String> fileNameList = new ArrayList<>();
+        this.getAllFileName(path, fileNameList);
+        for (String file : fileNameList) {
+            this.readFile(file.toString());
+        }
     }
 
     /**
      * 解析json格式 解析单个台风 入库
      */
-    public void readFile() throws Exception {
-//        String pathName = "E:\\workspace\\typhoon\\download\\view_2468535";     //帕布
-//        String pathName = "E:\workspace\typhoon\download\\view_2462539";   //桃芝
-        String pathName = "E:\\workspace\\typhoon-cloud\\typhoon-download\\download\\babj\\view_2468535";     //帕布
+    public void readFile(String file) throws Exception {
+//        String pathName = "E:\\workspace\\typhoon-cloud\\typhoon-download\\download\\babj\\view_2468535";     //帕布
+        String pathName = path + file;
         File fileName = new File(pathName);
         InputStreamReader reader = new InputStreamReader(new FileInputStream(fileName));
         BufferedReader br = new BufferedReader(reader);
@@ -148,35 +157,44 @@ public class DataScheduler {
             }
 
             /** 添加BABJ的预报路径 */
-            JSONArray jsonArray = ((JSONArray) json).getJSONObject(0).getJSONArray("typhoon").getJSONArray(8)
-                    .getJSONArray(i).getJSONObject(11).getJSONArray("BABJ");
-            System.out.println(jsonArray);
-            List<TyphoonForecast> forecastList = new ArrayList<>();
-            for (int k = 0; k < jsonArray.size(); k++) {
-                com.field.typhoondata.entity.TyphoonForecast typhoonForecast = new TyphoonForecast();
-                Calendar c = Calendar.getInstance();
-                c.setTime(sdf.parse(obs_time));
-                c.add(Calendar.HOUR_OF_DAY, jsonArray.getJSONArray(k).getInt(0)); //预报时间=观察时间+预报时效
-                typhoonForecast.setTyphoon_id(Integer.parseInt(num));
-                typhoonForecast.setObs_time(obs_time);
-                typhoonForecast.setPre_time(sdf.format(c.getTime()));
-                typhoonForecast.setForecast_org("BABJ");
+            JSONArray jsonArray = null;
+            try {
+                jsonArray = ((JSONArray) json).getJSONObject(0).getJSONArray("typhoon").getJSONArray(8)
+                        .getJSONArray(i).getJSONObject(11).getJSONArray("BABJ");
+                System.out.println(jsonArray);
+            } catch (JSONException e) {
+                log.info("*********an null object happened in forecast syncing");
+            }
+            if (jsonArray != null) {
+                List<TyphoonForecast> forecastList = new ArrayList<>();
+                for (int k = 0; k < jsonArray.size(); k++) {
+                    TyphoonForecast typhoonForecast = new TyphoonForecast();
+                    Calendar c = Calendar.getInstance();
+                    c.setTime(sdf.parse(obs_time));
+                    c.add(Calendar.HOUR_OF_DAY, jsonArray.getJSONArray(k).getInt(0)); //预报时间=观察时间+预报时效
+                    typhoonForecast.setTyphoon_id(Integer.parseInt(num));
+                    typhoonForecast.setObs_time(obs_time);
+                    typhoonForecast.setPre_time(sdf.format(c.getTime()));
+                    typhoonForecast.setForecast_org("BABJ");
 
-                String longitude = jsonArray.getJSONArray(k).getString(2);
-                String latitude = jsonArray.getJSONArray(k).getString(3);
-                String cen_pressure = jsonArray.getJSONArray(k).getString(4);
-                String max_speed = jsonArray.getJSONArray(k).getString(5);
-                typhoonForecast.setLon(Float.parseFloat(longitude));
-                typhoonForecast.setLat(Float.parseFloat(latitude));
-                typhoonForecast.setCentral_pressure(Float.parseFloat(cen_pressure));
-                typhoonForecast.setWind_speed_max(Float.parseFloat(max_speed));
-                /**当台风为无名台风时，向typhoon_forecast表中存入字段nameless_id*/
-                if (num.equals("20")) {
-                    String namelessId = ((JSONArray) json).getJSONObject(0).getJSONArray("typhoon").getString(0);
-                    typhoonForecast.setNameless_id(Integer.parseInt(namelessId));
+                    String longitude = jsonArray.getJSONArray(k).getString(2);
+                    String latitude = jsonArray.getJSONArray(k).getString(3);
+                    String cen_pressure = jsonArray.getJSONArray(k).getString(4);
+                    String max_speed = jsonArray.getJSONArray(k).getString(5);
+                    typhoonForecast.setLon(Float.parseFloat(longitude));
+                    typhoonForecast.setLat(Float.parseFloat(latitude));
+                    typhoonForecast.setCentral_pressure(Float.parseFloat(cen_pressure));
+                    typhoonForecast.setWind_speed_max(Float.parseFloat(max_speed));
+                    /**当台风为无名台风时，向typhoon_forecast表中存入字段nameless_id*/
+                    if (num.equals("20")) {
+                        String namelessId = ((JSONArray) json).getJSONObject(0).getJSONArray("typhoon").getString(0);
+                        typhoonForecast.setNameless_id(Integer.parseInt(namelessId));
+                    }
+
+                    forecastList.add(typhoonForecast);
                 }
-
-                forecastList.add(typhoonForecast);
+                /** forecast入库*/
+                typhoonForecastServiceImpl.insertOrUpdateForecast(forecastList);
             }
 
 
@@ -185,8 +203,7 @@ public class DataScheduler {
                 String namelessId = ((JSONArray) json).getJSONObject(0).getJSONArray("typhoon").getString(0);
                 typhoonLive.setNameless_id(Integer.parseInt(namelessId));
             }
-            /** forecast入库*/
-            typhoonForecastServiceImpl.insertOrUpdateForecast(forecastList);
+
             /** live入库*/
             List<TyphoonLive> list = new ArrayList<>();
             list.add(typhoonLive);
@@ -196,5 +213,26 @@ public class DataScheduler {
         System.out.println(Calendar.getInstance().getTime() + " 实况数据及BABJ预报数据入库成功");
     }
 
+    /** 获取所有以"view"开头的文件名*/
+    public void getAllFileName(String path,ArrayList<String> fileNameList) {
+        /**
+            * @Description: 获取所有文件名
+            * @Date: Created in 16:43 2019/4/29
+             * @param path:文件夹的路径
+         * @param fileNameList : 存放文件名称的list
+        */
+        //ArrayList<String> files = new ArrayList<String>();
+//        boolean flag = false;
+        File file = new File(path);
+        File[] tempList = file.listFiles();
+
+        for (int i = 0; i < tempList.length; i++) {
+            if (tempList[i].isFile()    &&   tempList[i].getName().substring(0,4).equals("view")) {
+              System.out.println("文     件：" + tempList[i].getName());
+//                fileNameList.add(tempList[i].toString());
+                fileNameList.add(tempList[i].getName());
+            }
+        }
+    }
 
 }
