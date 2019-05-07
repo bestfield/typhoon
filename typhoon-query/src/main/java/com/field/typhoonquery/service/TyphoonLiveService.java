@@ -24,9 +24,9 @@ public interface TyphoonLiveService {
 
     List<Integer> cutJson(List<TyphoonLive> list, int typhoonCount);
 
-    /** 点查询*/
-    List<Integer> queryTyphoonByPoint(int startYear, int endYear,
-                                      float cenLongitude, float cenLatitude, float radius);
+//    /** 点查询*/
+//    List<Integer> queryTyphoonByPoint(int startYear, int endYear,
+//                                      float cenLongitude, float cenLatitude, float radius);
 
     /** 线查询*/
     List<Integer> queryTyphoonByLine(int startYear, int endYear,

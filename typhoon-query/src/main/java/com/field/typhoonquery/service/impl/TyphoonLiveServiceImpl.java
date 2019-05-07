@@ -56,45 +56,45 @@ public class TyphoonLiveServiceImpl implements TyphoonLiveService {
         return typhoonLiveMapper.listTpLiveById(typhoonId);
     }
 
-    /** 点查询*/
-    @Override
-    public List<Integer> queryTyphoonByPoint(int startYear, int endYear, float cenLongitude, float cenLatitude, float radius) {
-        /**
-         * @Description: 点查询
-         * @Date: Created in 10:00 2018/12/11
-         * @param startYear
-         * @param endYear
-         * @param cenLongitude
-         * @param cenLatitude
-         * @param radius
-         * @Return: 返回的result存的值为typhoonId(s)
-         */
-        List<Integer> result = new ArrayList<>();
-        List<TyphoonLive> list = typhoonLiveMapper.listTpLiveByYears(startYear, endYear);
-        log.info(list.toString());
-        int size = list.size();
-        if(size == 0) return null;
-        int typhoonCount = calcTyphoonCount(list);
-        List<Integer> index = cutJson(list, typhoonCount);
-        int flag = 0;
-
-        for(int i = 0; i < index.size(); i++){
-            for(int j = flag;j < index.get(i);j++){
-                /**!!!!!!!这里radius要改 经纬度与Km的转换*/
-                if( getDistance(cenLongitude, cenLatitude, list.get(j).getLon(), list.get(j).getLat())
-                        > radius){
-                    continue;
-                }else{
-                    if(! result.contains(list.get(index.get(i)).getTyphoon_id())) {
-                        result.add(list.get(index.get(i)).getTyphoon_id());
-                    }
-                    break;
-                }
-            }
-            flag = index.get(i) ;
-        }
-        return result;
-    }
+//    /** 点查询*/
+//    @Override
+//    public List<Integer> queryTyphoonByPoint(int startYear, int endYear, float cenLongitude, float cenLatitude, float radius) {
+//        /**
+//         * @Description: 点查询
+//         * @Date: Created in 10:00 2018/12/11
+//         * @param startYear
+//         * @param endYear
+//         * @param cenLongitude
+//         * @param cenLatitude
+//         * @param radius
+//         * @Return: 返回的result存的值为typhoonId(s)
+//         */
+//        List<Integer> result = new ArrayList<>();
+//        List<TyphoonLive> list = typhoonLiveMapper.listTpLiveByYears(startYear, endYear);
+//        log.info(list.toString());
+//        int size = list.size();
+//        if(size == 0) return null;
+//        int typhoonCount = calcTyphoonCount(list);
+//        List<Integer> index = cutJson(list, typhoonCount);
+//        int flag = 0;
+//
+//        for(int i = 0; i < index.size(); i++){
+//            for(int j = flag;j < index.get(i);j++){
+//                /**!!!!!!!这里radius要改 经纬度与Km的转换*/
+//                if( getDistance(cenLongitude, cenLatitude, list.get(j).getLon(), list.get(j).getLat())
+//                        > radius){
+//                    continue;
+//                }else{
+//                    if(! result.contains(list.get(index.get(i)).getTyphoon_id())) {
+//                        result.add(list.get(index.get(i)).getTyphoon_id());
+//                    }
+//                    break;
+//                }
+//            }
+//            flag = index.get(i) ;
+//        }
+//        return result;
+//    }
 
     /** 线查询*/
     @Override
